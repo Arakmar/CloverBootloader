@@ -828,6 +828,12 @@ MainPostBuildScript() {
     do
       copyBin "$BUILD_DIR_ARCH"/$efi.efi "$CLOVER_PKG_DIR"/EFI/CLOVER/drivers/$DRIVERS_UEFI/$efi.efi
     done
+    
+    binArray=( NvmExpressDxe )
+    for efi in "${binArray[@]}"
+    do
+      copyBin "$BUILD_DIR_ARCH"/$efi.efi "$CLOVER_PKG_DIR"/EFI/CLOVER/drivers/$DRIVERS_UEFI/$efi.efi
+    done
 
 #    binArray=( AppleImageCodec AppleKeyAggregator )
 #    for efi in "${binArray[@]}"
@@ -844,7 +850,7 @@ MainPostBuildScript() {
     fi
 
     # drivers64UEFI
-    binArray=( CsmVideoDxe EmuVariableUefi NvmExpressDxe OsxFatBinaryDrv PartitionDxe AudioDxe )
+    binArray=( CsmVideoDxe EmuVariableUefi OsxFatBinaryDrv PartitionDxe AudioDxe )
 
     for efi in "${binArray[@]}"
     do

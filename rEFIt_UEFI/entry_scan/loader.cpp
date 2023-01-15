@@ -2012,7 +2012,7 @@ void ScanLoader(void)
       LOADER_ENTRY* le = AddLoaderEntry(BOOT_LOADER_PATH, NullXString8Array, L""_XSW, L"UEFI internal"_XSW, Volume, NULL, OSTYPE_OTHER, 0);
       if ( le ) {
         DBG("     hiding entry because DiskKind is DISK_KIND_INTERNAL: %ls\n", le->LoaderPath.s());
-        le->Hidden = true;
+        le->Hidden = false;
       }
     }
     //    DBG("search for external UEFI\n");
